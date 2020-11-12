@@ -204,7 +204,7 @@ void AstarteTransport::setupMqtt()
     }
 
     connect(m_mqttBroker->init(), &Hemera::Operation::finished, this, [this] {
-        m_mqttBroker->setKeepAlive(60);
+        m_mqttBroker->setKeepAlive(600);
         m_mqttBroker->connectToBroker();
     });
     connect(m_mqttBroker, &MQTTClientWrapper::statusChanged, this, &AstarteTransport::onStatusChanged);
